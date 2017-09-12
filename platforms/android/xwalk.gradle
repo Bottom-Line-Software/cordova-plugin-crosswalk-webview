@@ -23,7 +23,7 @@ def LITE_MODE = "lite"
 def DEFAULT_GROUP_ID = "org.xwalk:"
 def SHARED_ARTIFACT_ID = "xwalk_shared_library:"
 def EMBEDD_ARTIFACT_ID = "xwalk_core_library:"
-def CANARY_ARTIFACT_ID = "xwalk_core_library_canary:"
+def CANARY_ARTIFACT_ID = "xwalk_core_library_canary:"download
 def BIT_64 = ":64bit@aar"
 def DEFAULT_MIN_SDK_VERSION = 14
 
@@ -74,7 +74,7 @@ if (ext.xwalkMode == SHARED_MODE) {
     // ext.cdvBuildMultipleApks is false by default.
     xwalk64bit = null;
 } else if (xwalk64bit == null) {
-    // Build embedded 32 bit crosswalk will generate two apks by default.
+    // Build embedded 32 bit crosswalk will generate two apks by default.download
     ext.cdvBuildMultipleApks = xwalkMultipleApk;
 }
 
@@ -93,7 +93,7 @@ if (!project.hasProperty('xwalkCommandLine')) {
 }
 // Apply values after project's build-extras.gradle
 cdvPluginPostBuildExtras.add({
-    def xwalkMavenRepo = 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2';
+    def xwalkMavenRepo = 'http://be.bottomline.eu/xwalk_repo';
     if (xwalkMode == LITE_MODE) {
         xwalkMavenRepo = 'https://download.01.org/crosswalk/releases/crosswalk-lite/android/maven2';
     }
